@@ -207,12 +207,18 @@ footer [class~="hover:text-signal"]:hover {
 [class~="text-cream"] {
   color: #FFFFFF !important;
 }
-/* Darken bg-orchard a touch for headers/sections that host white
-   text — #28694A vs #2E7D4F adds 0.5:1 of contrast margin. Note we
-   leave the brand orchard intact for borders/icons; this only re-tints
-   solid section backgrounds via the same Tailwind class.            */
-[class~="bg-orchard"]:not([class*="/"]):not([class*="-dark"]) {
-  background-color: #28694A !important;
+/* Darken bg-orchard a touch for any element actually using the solid
+   bg-orchard token. Use [class~=] (exact whitespace token) so we don't
+   match bg-orchard/8, bg-orchard/10, etc. Even if the element ALSO
+   has hover:bg-orchard-dark, [class~="bg-orchard"] still applies at
+   rest state — the original rule had a buggy :not([class*="-dark"])
+   that incorrectly excluded those elements.                          */
+[class~="bg-orchard"] {
+  background-color: #1F5839 !important;
+}
+[class~="bg-orchard"]:hover,
+[class~="hover:bg-orchard-dark"]:hover {
+  background-color: #144024 !important;
 }
 /* Restore the muted alpha utilities (rule 4) on dark contexts — their
    explicit selectors above override this when needed. */
