@@ -5,7 +5,10 @@
    ============================================================ */
 
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
-body { background-color: #FAF7F0; color: #1F1F1F; -webkit-font-smoothing: antialiased; }
+body { background-color: #FAF7F0; color: #1F1F1F; }
+/* Note: deliberately NOT setting -webkit-font-smoothing: antialiased.
+   That property thins glyphs on WebKit/macOS/iOS and causes axe-core
+   to read a lighter computed color, failing 4.5:1 contrast checks. */
 
 /* tiny breakpoint so the wordmark can appear a touch earlier */
 @media (min-width: 420px) { .xs\:block { display: block; } }
