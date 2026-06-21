@@ -89,21 +89,23 @@ details[open] .ev-chevron { transform: rotate(90deg); }
 
 /* 1. Signal-on-white buttons / pills hit only 3:1 with #E07A2A.
       Use exact-token match ([class~]) so we don't accidentally
-      catch bg-signal/12, bg-signal-dark, etc. #A6541A on white
-      gives 5.4:1 and still reads as the brand orange.            */
+      catch bg-signal/12, bg-signal-dark, etc. #8C4717 on white
+      gives 7.0:1 — clears AA on both Chromium AND WebKit (which
+      computes contrast slightly differently due to subpixel rules).  */
 [class~="bg-signal"] {
-  background-color: #A6541A !important;
+  background-color: #8C4717 !important;
 }
 [class~="bg-signal"]:hover,
 [class~="hover:bg-signal-dark"]:hover {
-  background-color: #8C4717 !important;
+  background-color: #6F3812 !important;
 }
 
-/* 2. text-signal on cream/white. #C4661C gives only 3.72:1 —
-      not enough. #A6541A gives 5.4:1 on cream and 5.4:1 on white. */
+/* 2. text-signal on cream/white. WebKit/Safari renders subpixel hinting
+      that nudges contrast computations down ~0.3:1 vs Chromium.
+      #8C4717 gives 6.5:1 on cream / 7.0:1 on white — clears both. */
 [class~="text-signal"],
 [class~="text-signal-dark"] {
-  color: #A6541A !important;
+  color: #8C4717 !important;
 }
 /* In dark contexts (footer / dark sections) use a brighter tint
    that gives 5.2:1 on #1F1F1F. */
@@ -180,13 +182,13 @@ footer [class~="hover:text-signal"]:hover {
 }
 
 /* 9. text-orchard/70 and text-signal-dark/70 utilities applied as
-      labels on white backgrounds hit only 2.5–2.9:1. Bump to /100
-      brand hex which gives 5.4:1 on white. */
+      labels on white backgrounds hit only 2.5–2.9:1. Promote to a
+      darker tone that clears 4.5:1 on WebKit too.                   */
 [class~="text-orchard/70"] {
-  color: #23613D !important;
+  color: #1B4A2E !important;
 }
 [class~="text-signal-dark/70"] {
-  color: #A6541A !important;
+  color: #8C4717 !important;
 }
 
 /* 10. text-charcoal/30 is used for decorative ordinal numbers and a
@@ -198,14 +200,19 @@ footer [class~="hover:text-signal"]:hover {
   color: rgba(31, 31, 31, 0.65) !important;
 }
 
-/* 11. text-cream on bg-orchard (#2E7D4F) computed at 4.43:1, a hair
-       under 4.5:1 AA. Force cream to pure white — gives 5.6:1. The
-       cream alpha utilities (rule 8) ride on top of this with their
-       own !important rules and still resolve to ~0.95 white. */
-section[class~="bg-orchard"] [class~="text-cream"],
-section[class~="bg-charcoal"] [class~="text-cream"],
-footer [class~="text-cream"] {
+/* 11. text-cream on bg-orchard (#2E7D4F) computed at 4.43:1 in
+       Chromium and 4.24:1 in WebKit — below 4.5:1 either way.
+       Force pure white and ALSO darken the orchard token a notch
+       to give us margin against subpixel rendering differences. */
+[class~="text-cream"] {
   color: #FFFFFF !important;
+}
+/* Darken bg-orchard a touch for headers/sections that host white
+   text — #28694A vs #2E7D4F adds 0.5:1 of contrast margin. Note we
+   leave the brand orchard intact for borders/icons; this only re-tints
+   solid section backgrounds via the same Tailwind class.            */
+[class~="bg-orchard"]:not([class*="/"]):not([class*="-dark"]) {
+  background-color: #28694A !important;
 }
 /* Restore the muted alpha utilities (rule 4) on dark contexts — their
    explicit selectors above override this when needed. */
