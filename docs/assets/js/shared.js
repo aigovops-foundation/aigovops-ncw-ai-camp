@@ -160,6 +160,7 @@
               <p class="font-700 text-xs uppercase tracking-[0.16em] text-cream/45 mb-4">Take action</p>
               <ul class="space-y-2.5 text-sm">
                 <li><a href="${href('pledge.html')}" class="text-cream/75 hover:text-signal transition-colors">Sign the Pledge</a></li>
+                <li><a href="${href('supporters.html')}" class="text-cream/75 hover:text-signal transition-colors">Our supporters</a></li>
                 <li><a href="https://www.aigovops-foundation.com" class="text-cream/75 hover:text-signal transition-colors">aigovops-foundation.com</a></li>
                 <li><a href="https://www.ncwtech.org" class="text-cream/75 hover:text-signal transition-colors">ncwtech.org</a></li>
                 <li><a href="https://github.com/focuslead/ai-council-framework" class="text-cream/75 hover:text-signal transition-colors">AI Council Framework</a></li>
