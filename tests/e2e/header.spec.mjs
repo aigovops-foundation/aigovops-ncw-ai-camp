@@ -193,11 +193,11 @@ test("Language toggle round-trips between the English and Spanish editions", asy
   ]) {
     await page.goto(from);
     await page.getByRole("link", { name: "Español" }).click();
-    await expect(page).toHaveURL(new RegExp(`${to.replace(/\//g, "\\/")}$`));
+    await expect(page).toHaveURL(new RegExp(`${to.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&")}$`));
     await expect(page.locator("html")).toHaveAttribute("lang", "es");
 
     await page.getByRole("link", { name: "English" }).click();
-    await expect(page).toHaveURL(new RegExp(`${from.replace(/\//g, "\\/")}$`));
+    await expect(page).toHaveURL(new RegExp(`${from.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&")}$`));
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
   }
 });
