@@ -50,7 +50,9 @@ The canonical, editable markdown source for every artifact in the program.
 | `02-facilitator-run-of-show.md` | Minute-by-minute for facilitators |
 | `03-centerpiece-session.md` | The 60-min plenary script with the Deep Think + Model Council live demo |
 | `04-one-pagers.md` | Source for the 4 printable one-pagers |
+| `04-one-pagers-spanish.md` | Spanish edition of the table-kit one-pagers (machine draft — native review pending) |
 | `05-gamma-deck-outline.md` | 60-slide master deck — paste into Gamma's "import from outline" |
+| `05-gamma-deck-spanish.md` | Spanish edition of the 60-slide deck, import-ready (machine draft — native review pending) |
 | `06-pledge-and-two-futures.md` | The 7-Point Pledge + Maria/Jake "two futures" story (EN) |
 | `07-mini-camps.md` | All 35 mini-camps (5 scenarios × 7 voices) |
 | `08-substack-morning-of.md` | Substack post Ken & Bob publish the morning of |
@@ -72,6 +74,7 @@ The canonical, editable markdown source for every artifact in the program.
 | `22-vendor-sponsorship.md` | Vendor sponsorship ask — outreach + page |
 | `23-sponsor-tracker.md` | Sponsor send + reply tracker — one row per vendor, day-7 nudge template |
 | `24-improvement-master-plan.md` | **T-13 → showtime improvement master plan** — this wave's 10 workstreams, owners, and timeline |
+| `25-sponsor-outreach-drafts.md` | 16 ready-to-send sponsor outreach emails — one per vendor, with send plan |
 | `authoring/mini-camps-booklet.pdf` | Print-ready 32-page saddle-stitch booklet (8.5×11) |
 
 ### `/docs/trailer-frames` — Cinema-quality storyboard
