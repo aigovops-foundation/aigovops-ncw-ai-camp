@@ -12,9 +12,17 @@
 
   // Which page is active? Derived from <body data-page="...">
   const PAGE = (document.body && document.body.getAttribute("data-page")) || "";
-  // Path prefix for pages living in a subdirectory (e.g. /tools/*.html set data-base="../")
-  const BASE = (document.body && document.body.getAttribute("data-base")) || "";
-  const href = (h) => (/^https?:/.test(h) ? h : BASE + h);
+  // Path prefix for pages living in a subdirectory (e.g. /tools/*.html set data-base="../").
+  // VALIDATED to a strict "../"-only shape: the value is developer-set, but we don't trust a DOM
+  // attribute as an input source, so anything that isn't a run of "../" is dropped to "". This closes
+  // the taint path CodeQL flags (getAttribute -> href attribute) at the source.
+  const _rawBase = (document.body && document.body.getAttribute("data-base")) || "";
+  const BASE = /^(?:\.\.\/)*$/.test(_rawBase) ? _rawBase : "";
+  // Encode a value for safe interpolation inside an HTML attribute (a recognized XSS sanitizer).
+  const escAttr = (s) => String(s).replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  // Every href() result is encoded, so each `${href(...)}` in the templates below is attribute-safe.
+  const href = (h) => escAttr(/^https?:/.test(h) ? h : BASE + h);
 
   const NAV = [
     { href: "index.html", key: "home", label: "Home" },
