@@ -33,7 +33,22 @@ const ACTIONS = {
   "Get the free toolkit": '#successCard a[href="resources.html"]',
   "Sign another": "#signAnother",
   "Get the weekly note": '#successCard a[href*="substack"]',
+  // #46 added this below the weekly-note CTA, so it — not the newsletter
+  // button — is now the bottom-most interactive element in the card.
+  "Join the AiGovOps community": '#successCard a[href*="community.aigovops"]',
 };
+
+// KNOWN GAP, tracked separately — these tests cover the card scrolled to its
+// end, which is the position the reserved padding governs. They do NOT cover
+// the post-commit resting position that pledge.js picks with
+// scrollIntoView({block:"center"}). After #46 lengthened the card to ~939px
+// against a ~664px phone viewport, centring it leaves the weekly-note CTA
+// under the launcher at that one position on 360x640 (33px), 375x667 (32px)
+// and 390x664 (22px). The reserved padding improves every one of those but
+// cannot close them, because where a centred card's middle falls depends on
+// cardHeight - viewportHeight. Closing it needs a scroll-anchor decision:
+// block:"end" measures clear on all six phone sizes but scrolls "Thank you
+// for committing" off the top, so it is a product call, not a lint fix.
 
 async function commitAndSettle(page) {
   // Keep the gate independent of the Foundation site being reachable.
