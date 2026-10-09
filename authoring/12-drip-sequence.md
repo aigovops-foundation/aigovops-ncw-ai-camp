@@ -48,7 +48,7 @@ To help:
 
 **Watch the recording.** The centerpiece plenary is now posted — the live Deep Think demo, the Model Council run on the real Wenatchee 4th-grade question, and the full Q&A including the hard ones. [Link: aigovops-foundation.com/ncw-recording] The breakout decks (Cool Tools, Cool Schools, The Rules, Build It in 60) are in the same folder.
 
-**Your first mini-camp — choose a path:**
+**Your first mini-camp:**
 
 **Pick your path:**
 
