@@ -1,5 +1,7 @@
 /** Merged from the identical inline `tailwind.config` blocks that 60 pages used to carry
- *  alongside the Tailwind Play CDN. Build: `npm run build:css` → docs/assets/css/tailwind.css */
+*  alongside the Tailwind Play CDN. Build: `npm run build:css` → docs/assets/css/tailwind.css (committed).
+ *  Tailwind v3 is fetched by npx at build time, not a devDependency: its chokidar/braces chain carries
+ *  audit advisories that would fail the repo's npm-audit gate, and the compiled sheet is what ships. */
 module.exports = {
   content: ["./docs/**/*.html", "./docs/assets/js/**/*.js"],
   theme: {
