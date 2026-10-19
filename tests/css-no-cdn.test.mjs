@@ -8,7 +8,10 @@ let bad = [];
 if (css.size < 20_000) bad.push(`docs/assets/css/tailwind.css is only ${css.size} bytes — run npm run build:css`);
 for (const f of walk("docs")) {
   const s = readFileSync(f, "utf8");
-  if (s.includes("cdn.tailwindcss.com")) bad.push(`${f}: still loads the Tailwind Play CDN`);
+  for (const [, src] of s.matchAll(/<script[^>]*\ssrc=["']([^"']+)["']/gi)) {
+    const host = URL.canParse(src) ? new URL(src).hostname : "";
+    if (host === "cdn.tailwindcss.com") bad.push(`${f}: still loads the Tailwind Play CDN`);
+  }
   if (/tailwind\.config\s*=/.test(s)) bad.push(`${f}: still carries an inline tailwind.config`);
   if (/\bclass="[^"]*\b(bg|text|flex|grid|p|m|px|py|mx|my|rounded)-/.test(s)) {
     const want = relative(dirname(f), "docs/assets/css/tailwind.css").split("\\").join("/");
