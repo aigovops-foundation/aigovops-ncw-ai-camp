@@ -1,5 +1,7 @@
 # AiGovOps × NCW AI Camp
 
+> Moved to [aigovops/camps/ncw](https://www.aigovops-foundation.com/camps/ncw/).
+
 > **Cool Tools. Cool Schools. The Rules.**
 > A complete, open-source community AI training program — built for the NCW Tech Alliance **AI Expo 2026**, August 11, 2026, Wenatchee Convention Center.
 
