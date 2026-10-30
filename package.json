@@ -19,7 +19,7 @@
     "test:css": "node tests/css-no-cdn.test.mjs"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.10.0",
+    "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.47.0",
     "htmlhint": "^1.1.4",
     "http-server": "^14.1.1",
