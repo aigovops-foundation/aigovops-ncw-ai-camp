@@ -32,13 +32,12 @@ Multi-page editorial-grade site, mobile-first, no backend dependencies. GitHub P
 - `docs/centerpiece.html` — Centerpiece plenary (Maria/Jake, evidence both sides, Deep Think + Model Council demo)
 - `docs/mini-camps.html` — All 35 mini-camps filterable + searchable
 - `docs/tools.html` + `docs/tools/*.html` — 16 dedicated tool pages + lab-tools installer index
-- `docs/pledge.html` — Sign the NCW AI Partnership Pledge (with live signer counter)
+- `docs/pledge.html` — Sign the NCW AI Partnership Pledge
 - `docs/hint-logs.html` — The Hint-Logs method (the receipts side of "keep the receipts")
 - `docs/resources.html` — One-pager downloads + trailer storyboard + tool inventory + citations library
 - `docs/about.html` — Ken Johnston, Bob Rapp, the Foundation, the partnership
 - `docs/assets/` — JS, CSS, images, 14 trailer frames
 - `docs/downloads/` — One-pager PDFs, mini-camps booklet, Spanish pledge, hint-logs spec, trailer script
-- `docs/api/sign.js` — Stub endpoint for pledge form (can be wired to any backend)
 
 ### `/authoring` — Source documents
 
@@ -121,7 +120,7 @@ This is Apache 2.0 licensed — fork it, rename "NCW" to your region, adjust the
 6. **We triangulate hard questions.** No single AI gets to answer something that matters.
 7. **We keep the receipts.** Prompts saved. Outputs saved. Edits saved.
 
-Sign it: [ncwaigovopsfoundation.pplx.app/pledge.html](https://ncwaigovopsfoundation.pplx.app/pledge.html)
+Sign it: [aigovops-foundation.github.io/aigovops-ncw-ai-camp/pledge.html](https://aigovops-foundation.github.io/aigovops-ncw-ai-camp/pledge.html)
 
 ---
 
@@ -145,7 +144,7 @@ What costs seven figures in the enterprise — Beacon, Umbrella, Lantern — is 
 **Foundation:** [AiGovOps Foundation](https://www.aigovops-foundation.com) (501(c)(3))
 **Community partner:** [NCW Tech Alliance](https://www.ncwtech.org)
 **Built with:** Perplexity Computer — research, drafting, page builds, image generation, end-to-end QA
-**Source dataset for evidence claims:** Khan Academy + AIMS Collaboratory (June 2026), [MIT critical-thinking study](https://www.theguardian.com/us-news/2026/jun/19/chatbots-critical-thinking-skills) (June 2026), Cornell GenAI study (May 2026), and the full citations library at `docs/15-qa-report.md`.
+**Source dataset for evidence claims:** Khan Academy + AIMS Collaboratory (June 2026), [MIT critical-thinking study](https://www.theguardian.com/us-news/2026/jun/19/chatbots-critical-thinking-skills) (June 2026), Cornell GenAI study (May 2026), and the full citations library at `authoring/15-qa-report.md`.
 
 ---
 
